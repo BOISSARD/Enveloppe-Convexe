@@ -15,7 +15,7 @@ Comment utiliser le programme :
 
 Verifier que `gcc` est installe afin de compiler le c.  
 Ainsi que `cmake` pour le makefile.  
-Pour la partie opengl : `libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev freeglut3 freeglut3-dev`
+Pour la partie opengl, verifiez que ces package linux soient installes `libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev freeglut3 freeglut3-dev`
 
 ## Lancer le code
 

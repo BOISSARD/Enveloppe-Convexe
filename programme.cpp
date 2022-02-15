@@ -162,10 +162,14 @@ void Programme::quitter(){
 }
 
 void Programme::menuCalculerEnveloppeConvexe(){
+	cout << "Calcul de l'enveloppe convexe." << endl << "------------------------------" << endl;
+
+	enveloppe = calculerEnveloppeConvexe(2);
+
+	/*
 	int choix;
 	bool invalide = true;
 	
-	cout << "Calcul de l'enveloppe convexe." << endl << "------------------------------" << endl;
 	cout << "1- Marche de Jarvis" << endl;
 	cout << "2- Algorithme Graham" << endl;
 	cout << "3- Quick hull" << endl;
@@ -192,9 +196,11 @@ void Programme::menuCalculerEnveloppeConvexe(){
 				break;
 		}
 	} 
-	
+	// */
+
 	//double duree;// = double(fin - debut)/CLOCKS_PER_SEC;
-	/*cout << "Temps pour réaliser l'algorithme et obtenir l'enveloppe : "; //<< duree << " milli-secondes." << endl; 
+	/*
+	cout << "Temps pour réaliser l'algorithme et obtenir l'enveloppe : "; //<< duree << " milli-secondes." << endl; 
 	if(duree < 1){
 		duree * 1000;
 		printf("%f milli-secondes", duree);
@@ -202,7 +208,8 @@ void Programme::menuCalculerEnveloppeConvexe(){
 		duree * 1000000;
 		printf("%f micro-secondes", duree);
 	}else printf("%f secondes", duree);
-	cout << endl;*/
+	cout << endl;
+	//*/
 	
 	cout << "Les points de l'enveloppe sont : " << endl;
 	for(vector<Point>::iterator it = enveloppe.begin(); it != enveloppe.end(); ++it)
@@ -216,12 +223,14 @@ void Programme::gestionEnveloppeConvexe(){
 	if(enveloppe.empty()) return;
 	
 	if(enveloppeAffiche){
+		cout << "Suppression de l'enveloppe convexe" << endl;
 		glNewList(4,GL_COMPILE_AND_EXECUTE);
 		glEndList();
 		affichage();		
 		enveloppeAffiche = false;
 	}
 	else {
+		cout << "Affichage de l'enveloppe convexe" << endl;
 		afficherEnvelopperConvexe();
 		enveloppeAffiche = true;
 	}
@@ -241,6 +250,9 @@ void Programme::gestionPointsEnveloppeConvexe(){
 }
 
 vector<Point> Programme::calculerEnveloppeConvexe(int choix){
+	
+	return CalculEnveloppeConvexe::quickHull(points);
+	
 	//usleep(5000000);
 	switch(choix){
 		case 1:
