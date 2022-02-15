@@ -11,9 +11,20 @@ Il permet d'exécuter différents algorithmes afin de récupérer les points de 
 Comment utiliser le programme :
 -------------------------------
 
+## Installer 
+
+Verifier que `gcc` est installe afin de compiler le c.  
+Ainsi que `cmake` pour le makefile.  
+Pour la partie opengl : `libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev freeglut3 freeglut3-dev`
+
+## Lancer le code
+
 Pour compiler : `make`  
+
 Pour executer (compile si ce n'est pas fait) : `make execute`  
 Pour executer en précisant le nom d'un fichier de points : `make execute FILE=points.don`
 
 L'ensemble des actions possibles sont écrites dans la console.
+Avec l'auto-completion de make dans la console il est possible de voir les differentes commandes pre-ecrite
 
+Pour nettoyer : `make clean`

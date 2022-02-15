@@ -7,7 +7,7 @@ LIBS = -lglut -lGLU -lGL -lm -L/usr/X11/lib -lXext -lX11
 CC = g++
 
 EXEC = main
-NAME = BoissardBoufenchouche
+NAME = Enveloppe-Convexe
 
 all: main.cpp point.o filedatamanager.o calculEnveloppeConvexe.o graphique.o programme.o openglmanager.o callbacks.o
 	$(CC) $^ -o $(EXEC) $(LIB_PATHS) $(LIBS)
